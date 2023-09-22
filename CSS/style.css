@@ -1,0 +1,376 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+/* Navbar styles */
+header {
+    background-color: transparent; /* Remove background color */
+    color: #000000;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #000000;
+}
+
+/* Hide the menu toggle button by default */
+.menu-toggle {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6600; /* Change to your desired hover color */
+}
+
+/* Divider between navigation items */
+.nav-links li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px; /* Width of the divider line */
+    background-color: #fff; /* Divider color */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    /* Show the menu toggle button in mobile mode */
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .nav-links a {
+        padding: 0;
+    }
+}
+
+/* Main section styles */
+main {
+    background-color: transparent;
+    padding: 40px;
+}
+
+#main-container {
+    display: flex;
+    justify-content: flex-end; /* Move content to the right */
+    max-width: 1000px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    align-items: center; /* Center vertically */
+}
+
+.main-content {
+    flex: 1.5; /* Allow content to grow to fill the available space */
+    padding: 20px;
+    text-align: left;
+}
+
+.main-content h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.main-content ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.main-content ul li {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff5500;
+}
+
+.main-image {
+    flex: 1; /* Allow image to grow to fill the available space */
+    text-align: center;
+}
+
+.main-image img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto;
+}
+
+/* Your existing CSS styles... */
+
+#services-section {
+    background-color: transparent;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.service-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+    flex-basis: calc(50% - 40px); /* 50% width minus margin */
+    
+}
+
+.service-card:nth-child(even) {
+    order: 1; /* Place even cards on the right */
+}
+
+.service-card:nth-child(odd) {
+    order: 2; /* Place odd cards on the left */
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .service-card:nth-child(even) {
+        order: 1; /* Place even cards above odd cards on mobile */
+    }
+}
+
+
+/* Add CSS styling for the review section */
+#review-section {
+    background-color: transparent;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.review-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+    width: calc(50% - 20px); /* 50% width with margin */
+    float: left; /* Float left for alternating layout */
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reviewer-avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ccc; /* Placeholder background color */
+}
+
+.reviewer-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.star-rating {
+    display: inline-block;
+    font-size: 24px;
+    color: #ffcc00; /* Star color */
+}
+
+.review-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media (max-width: 768px) {
+    .review-card {
+        width: 100%; /* Full width on smaller screens */
+        float: none; /* Remove float for stacking */
+        margin: 20px 0; /* Adjust margin for spacing */
+    }
+}
+
+.social-media-section {
+    background-color: transparent;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-media-links {
+    margin-top: 20px;
+}
+
+.social-media-icon {
+    font-size: 24px;
+    margin-right: 20px;
+    color: #333; /* Icon color */
+}
+
+/* Adjust icon colors for specific social media platforms */
+.facebook-icon { color: #1877f2; }
+.twitter-icon { color: #1da1f2; }
+.linkedin-icon { color: #0a66c2; }
+.instagram-icon { color: #e4405f; }
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media (max-width: 768px) {
+    .social-media-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+
+    .social-media-icon {
+        margin-right: 0; /* Remove right margin to center icons */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+}
+
+/* Add these styles in your existing CSS or styles.css */
+
+#about-us {
+    background-color: #f9f9f9; /* Add your desired background color */
+    padding: 50px;
+    border-radius: 15px; /* Add border-radius for rounded corners */
+    overflow: hidden; 
+}
+
+#about-us h2 {
+    color: #000000; /* Add your desired text color */
+    text-align: center;
+}
+
+#about-us p {
+    color: #1b1b1b; /* Add your desired text color */
+    text-align: center;
+}
+
+/* Add these styles in your existing CSS or styles.css */
+
+/* Common styles */
+#contact {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 50px;
+    width: 600px;
+    margin: 0 auto; /* Center the section */
+}
+
+#contact h2, #contact h3 {
+    color: #333;
+    text-align: center;
+}
+
+#contact p {
+    color: #555;
+    text-align: center;
+}
+
+/* Media query for mobile */
+@media (max-width: 600px) {
+    #contact {
+        width: 90%; /* Adjust the width for smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
